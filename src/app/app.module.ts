@@ -13,6 +13,8 @@ import { AuthPageComponent } from './auth-page/auth-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { FormsModule } from '@angular/forms';
+import { DemoPageComponent } from './demo-page/demo-page.component';
+import { DebugPageComponent } from './debug-page/debug-page.component';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +26,10 @@ const appRoutes: Routes = [
     component: AuthPageComponent,
   },
   {
+    path: "demo",
+    component: DemoPageComponent,
+  },
+  {
     path: "**",
     component: NotFoundPageComponent,
   },
@@ -32,11 +38,11 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-
     DataTableComponent,
     MainPageComponent,
     AuthPageComponent,
     NotFoundPageComponent,
+    DebugPageComponent,
 
   ],
   imports: [

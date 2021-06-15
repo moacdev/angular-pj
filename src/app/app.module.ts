@@ -8,20 +8,46 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MainPageComponent } from './main-page/main-page.component';
+import { AuthPageComponent } from './auth-page/auth-page.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { FormsModule } from '@angular/forms';
+
+const appRoutes: Routes = [
+  {
+    path: "",
+    component: MainPageComponent,
+  },
+  {
+    path: "auth",
+    component: AuthPageComponent,
+  },
+  {
+    path: "**",
+    component: NotFoundPageComponent,
+  },
+]
 
 @NgModule({
   declarations: [
     AppComponent,
+
     DataTableComponent,
-    
+    MainPageComponent,
+    AuthPageComponent,
+    NotFoundPageComponent,
+
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]

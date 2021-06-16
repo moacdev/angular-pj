@@ -22,6 +22,10 @@ const appRoutes: Routes = [
     component: MainPageComponent,
   },
   {
+    path: "debug",
+    component: DebugPageComponent,
+  },
+  {
     path: "auth",
     component: AuthPageComponent,
   },
